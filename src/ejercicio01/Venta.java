@@ -7,8 +7,7 @@ public class Venta
 	public enum tipoProducto
 	{
 		VETERINARIO,
-		HERBICIDA,
-		FERTILIZANTE
+		AGROQUIMICO
 	}
 	
 	private String nombreCliente;
@@ -19,5 +18,21 @@ public class Venta
 	public Venta() 
 	{
 		
+	}
+
+	public Double getMontoTotal() {
+		return montoTotal;
+	}
+
+	public void setMontoTotal(Double montoTotal) {
+		this.montoTotal = montoTotal;
+	}
+
+	public tipoProducto getTipoProducto() {
+		return tipoProducto;
+	}
+
+	public void setTipoProducto(tipoProducto tipoProducto) {
+		this.tipoProducto = tipoProducto;
 	}
 }

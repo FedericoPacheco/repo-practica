@@ -1,11 +1,9 @@
 package ejercicio01;
 
-public class Vendedor extends Empleado 
+public abstract class Vendedor extends Empleado 
 {
-
-	public Vendedor() 
+	public Vendedor(String nombre, Long cuit, String correoElectronico, Double valorObjetivoDeVentas) 
 	{
-		
+		super(nombre, cuit, correoElectronico, valorObjetivoDeVentas);
 	}
-
 }
