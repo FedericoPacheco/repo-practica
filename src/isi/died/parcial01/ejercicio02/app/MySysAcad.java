@@ -1,5 +1,7 @@
 package isi.died.parcial01.ejercicio02.app;
 
+import java.util.OptionalDouble;
+
 import isi.died.parcial01.ejercicio02.dominio.*;
 
 
@@ -18,8 +20,9 @@ public interface MySysAcad {
 	 * asigna la inscripcion a la lista de inscripciones del alumno, 
 	 * de la materia y del docente
 	 * @throws InscripcionNoPudoRealizarseException 
+	 * @throws LimiteDeInscriptosAlcanzadoException 
 	 */
-	public void inscribirAlumnoCursada(Docente d,Alumno a, Materia m,Integer cicloLectivo) throws InscripcionNoPudoRealizarseException;
+	public void inscribirAlumnoCursada(Docente d,Alumno a, Materia m,Integer cicloLectivo) throws InscripcionNoPudoRealizarseException, LimiteDeInscriptosAlcanzadoException;
 
 	/**
 	 * crea una nueva instancia de Inscripcion y 
@@ -28,5 +31,5 @@ public interface MySysAcad {
 	 */
 	public void inscribirAlumnoExamen(Docente d,Alumno a, Materia m);
 	
-
+	public OptionalDouble promedio(Docente docente, Materia materia);
 }

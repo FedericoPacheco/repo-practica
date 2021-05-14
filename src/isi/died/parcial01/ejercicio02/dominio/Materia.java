@@ -14,6 +14,8 @@ public class Materia {
 	private List<Materia> correlativasCursada;
 	private List<Materia> correlativasRendir;
 	
+	private Integer limiteInscripciones; // Agregado.
+	
 	public Materia() {
 		this.id = ID_GENERATOR++;
 	}
@@ -79,5 +81,13 @@ public class Materia {
 	
 	public void addCorrelativaCursada(Materia m) {
 		this.correlativasCursada.add(m);
+	}
+
+	public Integer getLimiteInscripciones() {
+		return limiteInscripciones;
+	}
+
+	public void setLimiteInscripciones(Integer limiteInscripciones) {
+		this.limiteInscripciones = limiteInscripciones;
 	}
 }
