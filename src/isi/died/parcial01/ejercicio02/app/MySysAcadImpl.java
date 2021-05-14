@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import isi.died.parcial01.ejercicio02.db.BaseDeDatos;
+import isi.died.parcial01.ejercicio02.db.BaseDeDatosExcepcion;
 import isi.died.parcial01.ejercicio02.dominio.*;
 
 
@@ -34,13 +35,17 @@ public class MySysAcadImpl implements MySysAcad {
 	
 
 	@Override
-	public void inscribirAlumnoCursada(Docente d, Alumno a, Materia m, Integer cicloLectivo) {
+	public void inscribirAlumnoCursada(Docente d, Alumno a, Materia m, Integer cicloLectivo) throws InscripcionNoPudoRealizarseException {
 		Inscripcion insc = new Inscripcion(cicloLectivo,Inscripcion.Estado.CURSANDO);
 		d.agregarInscripcion(insc);
 		a.addCursada(insc);
 		m.addInscripcion(insc);
-		// DESCOMENTAR Y gestionar excepcion
-		// DB.guardar(insc);
+	
+		try {
+			DB.guardar(insc);
+		} catch (BaseDeDatosExcepcion e) {
+			throw new InscripcionNoPudoRealizarseException();
+		}
 	}
 
 	@Override

@@ -17,8 +17,9 @@ public interface MySysAcad {
 	 * crea una nueva instancia de Inscripcion y 
 	 * asigna la inscripcion a la lista de inscripciones del alumno, 
 	 * de la materia y del docente
+	 * @throws InscripcionNoPudoRealizarseException 
 	 */
-	public void inscribirAlumnoCursada(Docente d,Alumno a, Materia m,Integer cicloLectivo);
+	public void inscribirAlumnoCursada(Docente d,Alumno a, Materia m,Integer cicloLectivo) throws InscripcionNoPudoRealizarseException;
 
 	/**
 	 * crea una nueva instancia de Inscripcion y 
